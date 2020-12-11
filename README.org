@@ -1,0 +1,14 @@
+#+TITLE: Readme
+
+* rofi-bspwm-flags
+
+This is a very roughly drafted script for setting node flags in rofi.
+Hooks into your system notifier to give you feedback about the set flag.
+
+I wrote this mostly out of frustration with chords in sxhkd.
+
+* Dependencies
+#+begin_src 
+notify-send
+python-rofi (get the repository one)
+#+end_src
