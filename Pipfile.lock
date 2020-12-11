@@ -1,0 +1,25 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "64ebd5d8d7689074c7df7d71037ff758aa2f3c7af4a13eb6af2ab3113533b52d"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.9"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "python-rofi": {
+            "file": "file:///home/david/repos/python-rofi/",
+            "version": "==1.0.1"
+        }
+    },
+    "develop": {}
+}

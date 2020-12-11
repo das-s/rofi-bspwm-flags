@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+
+import subprocess
+from rofi import Rofi
+from notify import notification
+
+flag_types = [
+    "sticky",
+    "locked",
+    "private",
+    "marked",
+    "hidden",
+]
+notifications = [
+    ["Sticky Flag", "Stays in the focused desktop of its monitor."],
+    ["Lock Flag", "Ignores the node --close message."],
+    ["Private Flag", "Tries to keep the same tiling position/size."],
+    ["Marked Flag", "Is now marked and loses that status on being sent."],
+    ["Hidden Flag", "It is gone!"],
+]
+
+
+def get_current_id():
+    """Get current window id from bspc."""
+    proc = subprocess.run(
+        ["bspc", "query", "-N", "-n", "focused"], capture_output=True, check=False
+    )
+    # HACK might run into problems if there are multiple nodes (possible?)
+    return proc.stdout.decode("utf-8").strip("', /\n")
+
+
+def query_bspc(node):
+    """Query which flags for current node are set already"""
+    indices = set()
+    for flag_index, value in enumerate(flag_types):
+        proc = subprocess.run(
+            ["bspc", "query", "-N", "-n", f".{flag_types[flag_index]}"],
+            capture_output=True,
+            check=False,
+        )
+        query = set(proc.stdout.decode("utf-8").strip("', ").split("\n"))
+        if node in query:
+            indices.add(flag_index)
+    return indices
+
+
+# TODO -multi-select leads to an error
+r = Rofi()
+current_id = get_current_id()
+indices = query_bspc(current_id)
+print(indices)
+flag_t_mod = []
+for f, value in enumerate(flag_types):
+    flag = flag_types[f] + " *" if f in indices else flag_types[f]
+    flag_t_mod.append(flag)
+
+index, key = r.select("Wähle die Flagge für das aktuelle Fenster aus:", flag_t_mod)
+if key == 0:
+    msg = "Unset " if index in indices else "Set "
+    notification(notifications[index][1], title=msg + notifications[index][0])
+    process = subprocess.run(["bspc", "node", "-g", flag_types[index]], check=False)
