@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "64ebd5d8d7689074c7df7d71037ff758aa2f3c7af4a13eb6af2ab3113533b52d"
+            "sha256": "bfd65b211fe2f36312b9e79962ece2ee8b1635b27bc4067db1b67a7f49367d86"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,36 @@
         ]
     },
     "default": {
+        "notify-send": {
+            "hashes": [
+                "sha256:783be39b81a380b65f059e6cce04ffb721d6ca105710f9b1714ccae9e21f58ce",
+                "sha256:8fc7b136ff84f7e29cafa67d0a1c1ceb87e5a51c36358d27f05bb5d770ddb0f1"
+            ],
+            "index": "pypi",
+            "version": "==0.0.16"
+        },
+        "pycairo": {
+            "hashes": [
+                "sha256:2088100a099c09c5e90bf247409ce6c98f51766b53bd13f96d6aac7addaa3e66",
+                "sha256:273a33c56aba724ec42fe1d8f94c86c2e2660c1277470be9b04e5113d7c5b72d",
+                "sha256:5695a10cb7f9ae0d01f665b56602a845b0a8cb17e2123bfece10c2e58552468c",
+                "sha256:57166119e424d71eccdba6b318bd731bdabd17188e2ba10d4f315f7bf16ace3f",
+                "sha256:57a768f4edc8a9890d98070dd473a812ac3d046cef4bc1c817d68024dab9a9b4",
+                "sha256:8cfa9578b745fb9cf2915ec580c2c50ebc2da00eac2cf4c4b54b63aa19da4b77",
+                "sha256:a942614923b88ae75c794506d5c426fba9c46a055d3fdd3b8db7046b75c079cc",
+                "sha256:ceb1edcbeb48dabd5fbbdff2e4b429aa88ddc493d6ebafe78d94b050ac0749e2",
+                "sha256:e5a3433690c473e073a9917dc8f1fc7dc8b9af7b201bf372894b8ad70d960c6d"
+            ],
+            "markers": "sys_platform == 'linux'",
+            "version": "==1.20.0"
+        },
+        "pygobject": {
+            "hashes": [
+                "sha256:051b950f509f2e9f125add96c1493bde987c527f7a0c15a1f7b69d6d1c3cd8e6"
+            ],
+            "markers": "sys_platform == 'linux'",
+            "version": "==3.38.0"
+        },
         "python-rofi": {
             "file": "file:///home/david/repos/python-rofi/",
             "version": "==1.0.1"

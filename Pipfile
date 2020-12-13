@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 python-rofi = {file = "file:///home/david/repos/python-rofi/"}
-notify-send = {*}
+notify-send = "*"
 
 [dev-packages]
 
