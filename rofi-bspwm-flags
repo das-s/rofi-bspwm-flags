@@ -54,7 +54,7 @@ for f, value in enumerate(flag_types):
     flag = flag_types[f] + " *" if f in indices else flag_types[f]
     flag_t_mod.append(flag)
 
-index, key = r.select("Wähle die Flagge für das aktuelle Fenster aus:", flag_t_mod)
+index, key = r.select("Select the flag for the current window:", flag_t_mod)
 if key == 0:
     msg = "Unset " if index in indices else "Set "
     notification(notifications[index][1], title=msg + notifications[index][0])
