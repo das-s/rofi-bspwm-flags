@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "bfd65b211fe2f36312b9e79962ece2ee8b1635b27bc4067db1b67a7f49367d86"
+            "sha256": "b0ddd5480a4d8c47fa8833f791587fac932fa87a33a759be0c9b5934c29a778c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -47,8 +47,9 @@
             "version": "==3.38.0"
         },
         "python-rofi": {
-            "file": "file:///home/david/repos/python-rofi/",
-            "version": "==1.0.1"
+            "editable": true,
+            "git": "https://github.com/brumar/python-rofi.git",
+            "ref": "a3b5cce2291e00b21f2e3d0b80bd7a315616e51c"
         }
     },
     "develop": {}
